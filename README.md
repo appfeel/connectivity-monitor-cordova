@@ -1,4 +1,4 @@
-connectivity-monitor-cordova
+Cordova Connectivity Monitor
 ============================
 
 Connectivity status monitoring for Cordova apps. Detects if there is WIFI/3G/EDGE/CDMA available.
