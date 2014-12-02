@@ -1,9 +1,9 @@
 /*
- CDVAdMobAds.h
+ CDVReachability.h
  Copyright 2014 AppFeel. All rights reserved.
  http://www.appfeel.com
  
- AdMobAds Cordova Plugin (com.admob.google)
+ Connectivity Monitor Cordova Plugin (com.connectivity.monitor)
  
  Permission is hereby granted, free of charge, to any person obtaining a copy
  of this software and associated documentation files (the "Software"), to
