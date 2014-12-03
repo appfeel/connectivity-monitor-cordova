@@ -82,58 +82,59 @@ To start monitoring connectivity, place the following code in your onDeviceReady
 #### connectivity.observeRemoteHostName(hostName, stopAllObservers, successCallback, failureCallback);
 Observes changes of connectivity to a given hostname.
 
- * @param {!Object}    hostName         (Optional) Name of the host to observe. Default www.google.com
- * @param {Boolean}    stopAllObservers (Optional) Stop any existing observer. Default false
- * @param {function()} successCallback  (Optional) Callback on success
- * @param {function()} failureCallback  (Optional) Callback on fail
-
+```
+* {!Object}    hostName         (Optional) Name of the host to observe. Default www.google.com
+* {Boolean}    stopAllObservers (Optional) Stop any existing observer. Default false
+* {function()} successCallback  (Optional) Callback on success
+* {function()} failureCallback  (Optional) Callback on fail
+```
 
 #### connectivity.observeRemoteIPV4(ipv4, stopAllObservers, successCallback, failureCallback);
 Observes changes of connectivity to a given ip v4.
 
-* @param {!Object}    ipv4             (Required) IP v4 to observe. Ex: 192.168.1.0
-* @param {Boolean}    stopAllObservers (Optional) Stop any existing observer. Default false
-* @param {function()} successCallback  (Optional) Callback on success
-* @param {function()} failureCallback  (Optional) Callback on fail
+* {!Object}    ipv4             (Required) IP v4 to observe. Ex: 192.168.1.0
+* {Boolean}    stopAllObservers (Optional) Stop any existing observer. Default false
+* {function()} successCallback  (Optional) Callback on success
+* {function()} failureCallback  (Optional) Callback on fail
 
 
 #### connectivity.observeRemoteIPV6(ipv6, stopAllObservers, successCallback, failureCallback);
 Observes changes of connectivity to a given ip v6.
 
-* @param {!Object}    ipv6             (Required) IP v6 to observe. Ex: ::ffff:192.168.1.0
-* @param {Boolean}    stopAllObservers (Optional) Stop any existing observer. Default false
-* @param {function()} successCallback  (Optional) Callback on success
-* @param {function()} failureCallback  (Optional) Callback on fail
+* {!Object}    ipv6             (Required) IP v6 to observe. Ex: ::ffff:192.168.1.0
+* {Boolean}    stopAllObservers (Optional) Stop any existing observer. Default false
+* {function()} successCallback  (Optional) Callback on success
+* {function()} failureCallback  (Optional) Callback on fail
 
 
 #### connectivity.observeLocalWifi(stopAllObservers, successCallback, failureCallback);
 Observes changes of connectivity to local wifi. (Android: Not yet implemented)
 
-* @param {Boolean}    stopAllObservers (Optional) Stop any existing observer. Default false
-* @param {function()} successCallback  (Optional) Callback on success
-* @param {function()} failureCallback  (Optional) Callback on fail
+* {Boolean}    stopAllObservers (Optional) Stop any existing observer. Default false
+* {function()} successCallback  (Optional) Callback on success
+* {function()} failureCallback  (Optional) Callback on fail
 
 
 #### connectivity.observeInternetConnection(stopAllObservers, successCallback, failureCallback);
 Observes changes of connectivity to internet connection.
 
-* @param {Boolean}    stopAllObservers (Optional) Stop any existing observer. Default false
-* @param {function()} successCallback  (Optional) Callback on success
-* @param {function()} failureCallback  (Optional) Callback on fail
+* {Boolean}    stopAllObservers (Optional) Stop any existing observer. Default false
+* {function()} successCallback  (Optional) Callback on success
+* {function()} failureCallback  (Optional) Callback on fail
 
 
 #### connectivity.stopAllObservers(successCallback, failureCallback);
 Stop any existing observer.
  
-* @param {function()} successCallback  (Optional) Callback on success
-* @param {function()} failureCallback  (Optional) Callback on fail
+* {function()} successCallback  (Optional) Callback on success
+* {function()} failureCallback  (Optional) Callback on fail
 
 
 ### Events
 #### document.addEventListener(connectivity.EVENTS.onReachabilityChanged, onReachabilityChanged, false)
 Raised when there is a change in connectivity. It calls a `function onReachabilityChanged(e) {}`
 
-* @param {Object} e  An object containing the following fields:
+* {Object} e  An object containing the following fields:
 - e.interface: The ingerface type that has changed connectivity status.
 - e.connected: True/False.
 - e.observer:  The observer that raised the event.

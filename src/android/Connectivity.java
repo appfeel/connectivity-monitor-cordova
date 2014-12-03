@@ -184,7 +184,7 @@ public class Connectivity {
     isCheckingIpReachability = false;
     ip = "";
 
-    if (isDisableBR) {
+    if (isDisableBR && isBREnabled) {
       // pm.setComponentEnabledSetting(connectivityBR, PackageManager.COMPONENT_ENABLED_STATE_DISABLED, PackageManager.DONT_KILL_APP);
       activity.unregisterReceiver(connectivityChangeBR);
       isBREnabled = false;
