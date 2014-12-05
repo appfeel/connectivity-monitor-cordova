@@ -4,7 +4,7 @@
 
   <name>Connectivity Monitoring</name>
   <description>Connectivity status monitoring. Detects if there is WIFI/3G/EDGE/CDMA available.</description>
-  <author>AppFeel</author>
+  <author email="info@appfeel.com" href="http://appfeel.com">AppFeel</author>
   <license>MIT</license>
   <keywords>connectivity,network state,net state,net,monitoring,monitor,net status,reachability,appfeel</keywords>
   <repo>https://github.com/appfeel/connectivity-monitor.git</repo>
