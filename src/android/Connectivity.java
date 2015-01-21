@@ -151,7 +151,7 @@ public class Connectivity {
     }
   }
 
-  public void observeRemoteHostname(String hostName) {
+  public void observeRemoteHostName(String hostName) {
     this.hostName = hostName;
     isCheckingHostNameReachability = true;
     startAllObservers();
