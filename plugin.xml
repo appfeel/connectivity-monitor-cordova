@@ -47,7 +47,7 @@
 
     <header-file src="src/ios/CDVAppFeelReachability.h" />
     <source-file src="src/ios/CDVAppFeelReachability.m" />
-    <source-file src="src/ios/AppFeelReachability.h" />
+    <header-file src="src/ios/AppFeelReachability.h" />
     <source-file src="src/ios/AppFeelReachability.m" />
 
     <framework src="SystemConfiguration.framework" />
