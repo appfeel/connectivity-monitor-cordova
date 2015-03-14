@@ -91,7 +91,7 @@ public class CPConnectivity extends CordovaPlugin implements IConnectivityChange
 
     if (ACTION_OBSERVE_REMOTE_HOSTNAME.equals(action)) {
       JSONObject options = args.optJSONObject(0);
-      result = executeObserveRemoteHostname(options, callbackContext);
+      result = executeObserveRemoteHostName(options, callbackContext);
 
     } else if (ACTION_OBSERVE_REMOTE_IP.equals(action)) {
       JSONObject options = args.optJSONObject(0);
@@ -120,7 +120,7 @@ public class CPConnectivity extends CordovaPlugin implements IConnectivityChange
     return true;
   }
 
-  private PluginResult executeObserveRemoteHostname(JSONObject options, CallbackContext callbackContext) throws JSONException {
+  private PluginResult executeObserveRemoteHostName(JSONObject options, CallbackContext callbackContext) throws JSONException {
     String hostName = DEFAULT_HOST_NAME;
 
     if (options.has(OPT_STOP_ALL_OBSERVERS)) {
@@ -133,7 +133,7 @@ public class CPConnectivity extends CordovaPlugin implements IConnectivityChange
       }
     }
 
-    connectivity.observeRemoteHostname(hostName);
+    connectivity.observeRemoteHostName(hostName);
     callbackContext.success();
 
     return null;
