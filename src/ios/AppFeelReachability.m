@@ -1,5 +1,5 @@
 /*
- File: Reachability.m
+ File: AppFeelReachability.m
  Abstract: Basic demonstration of how to use the SystemConfiguration Reachablity APIs.
  Version: 3.5
  
@@ -52,7 +52,7 @@
 
 #import <CoreFoundation/CoreFoundation.h>
 
-#import "Reachability.h"
+#import "AppFeelReachability.h"
 
 
 NSString *kReachabilityChangedNotification = @"kNetworkReachabilityChangedNotification";
@@ -66,7 +66,7 @@ static void PrintReachabilityFlags(SCNetworkReachabilityFlags flags, const char*
 {
 #if kShouldPrintReachabilityFlags
     
-    NSLog(@"Reachability Flag Status: %c%c %c%c%c%c%c%c%c %s\n",
+    NSLog(@"AppFeelReachability Flag Status: %c%c %c%c%c%c%c%c%c %s\n",
           (flags & kSCNetworkReachabilityFlagsIsWWAN)               ? 'W' : '-',
           (flags & kSCNetworkReachabilityFlagsReachable)            ? 'R' : '-',
           
@@ -87,17 +87,17 @@ static void ReachabilityCallback(SCNetworkReachabilityRef target, SCNetworkReach
 {
 #pragma unused (target, flags)
     NSCAssert(info != NULL, @"info was NULL in ReachabilityCallback");
-    NSCAssert([(__bridge NSObject*) info isKindOfClass: [Reachability class]], @"info was wrong class in ReachabilityCallback");
+    NSCAssert([(__bridge NSObject*) info isKindOfClass: [AppFeelReachability class]], @"info was wrong class in ReachabilityCallback");
     
-    Reachability* noteObject = (__bridge Reachability *)info;
+    AppFeelReachability* noteObject = (__bridge AppFeelReachability *)info;
     // Post a notification to notify the client that the network reachability changed.
     [[NSNotificationCenter defaultCenter] postNotificationName: kReachabilityChangedNotification object: noteObject];
 }
 
 
-#pragma mark - Reachability implementation
+#pragma mark - AppFeelReachability implementation
 
-@implementation Reachability
+@implementation AppFeelReachability
 {
     BOOL _alwaysReturnLocalWiFiStatus; //default is NO
     SCNetworkReachabilityRef _reachabilityRef;
@@ -105,7 +105,7 @@ static void ReachabilityCallback(SCNetworkReachabilityRef target, SCNetworkReach
 
 + (instancetype)reachabilityWithHostName:(NSString *)hostName
 {
-    Reachability* returnValue = NULL;
+    AppFeelReachability* returnValue = NULL;
     SCNetworkReachabilityRef reachability = SCNetworkReachabilityCreateWithName(NULL, [hostName UTF8String]);
     if (reachability != NULL)
     {
@@ -124,7 +124,7 @@ static void ReachabilityCallback(SCNetworkReachabilityRef target, SCNetworkReach
 {
     SCNetworkReachabilityRef reachability = SCNetworkReachabilityCreateWithAddress(kCFAllocatorDefault, hostAddress);
     
-    Reachability* returnValue = NULL;
+    AppFeelReachability* returnValue = NULL;
     
     if (reachability != NULL)
     {
@@ -161,7 +161,7 @@ static void ReachabilityCallback(SCNetworkReachabilityRef target, SCNetworkReach
     // IN_LINKLOCALNETNUM is defined in <netinet/in.h> as 169.254.0.0.
     localWifiAddress.sin_addr.s_addr = htonl(IN_LINKLOCALNETNUM);
     
-    Reachability* returnValue = [self reachabilityWithAddress: (const struct sockaddr *)&localWifiAddress];
+    AppFeelReachability* returnValue = [self reachabilityWithAddress: (const struct sockaddr *)&localWifiAddress];
     if (returnValue != NULL)
     {
         returnValue->_alwaysReturnLocalWiFiStatus = YES;

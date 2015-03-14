@@ -1,5 +1,5 @@
 /*
- File: Reachability.h
+ File: AppFeelReachability.h
  Abstract: Basic demonstration of how to use the SystemConfiguration Reachablity APIs.
  Version: 3.5
  
@@ -60,7 +60,7 @@ typedef enum : NSInteger {
 extern NSString *kReachabilityChangedNotification;
 
 
-@interface Reachability : NSObject
+@interface AppFeelReachability : NSObject
 
 /*!
  * Use to check the reachability of a given host name.

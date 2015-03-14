@@ -1,5 +1,5 @@
 /*
- CDVReachability.m
+ CDVAppFeelReachability.m
  Copyright 2014 AppFeel. All rights reserved.
  http://www.appfeel.com
  
@@ -24,13 +24,13 @@
  SOFTWARE.
  */
  
-#import "CDVReachability.h"
+#import "CDVAppFeelReachability.h"
 
-@interface CDVReachability()
+@interface CDVAppFeelReachability()
 
-@property (nonatomic) Reachability *hostReachability;
-@property (nonatomic) Reachability *internetReachability;
-@property (nonatomic) Reachability *localWifiReachability;
+@property (nonatomic) AppFeelReachability *hostReachability;
+@property (nonatomic) AppFeelReachability *internetReachability;
+@property (nonatomic) AppFeelReachability *localWifiReachability;
 
 - (void)onReachabilityChanged:(NSNotification*)note;
 - (void)stopAllObservers;
@@ -39,7 +39,7 @@
 
 
 
-@implementation CDVReachability
+@implementation CDVAppFeelReachability
 
 @synthesize hostReachability;
 @synthesize internetReachability;
@@ -69,7 +69,7 @@
     NSString *hostName = DEFAULT_HOST_NAME;
     
     if (argc >= 1) {
-        NSDictionary* options = [args objectAtIndex:0 withDefault:[NSNull null]];
+        NSDictionary* options = [command argumentAtIndex:0 withDefault:[NSNull null]];
         if ((NSNull *)options == [NSNull null]) {
             hostName = DEFAULT_HOST_NAME;
         } else {
@@ -95,7 +95,7 @@
         hostReachability = nil;
     }
     
-    hostReachability = [Reachability reachabilityWithHostName:hostName];
+    hostReachability = [AppFeelReachability reachabilityWithHostName:hostName];
     [hostReachability startNotifier];
     [self.commandDelegate sendPluginResult:pluginResult callbackId:callbackId];
 }
@@ -109,7 +109,7 @@
     BOOL isParamsOk = false;
     
     if (argc >= 1) {
-        NSDictionary* options = [args objectAtIndex:0 withDefault:[NSNull null]];
+        NSDictionary* options = [command argumentAtIndex:0 withDefault:[NSNull null]];
         if ((NSNull *)options == [NSNull null]) {
             pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_ERROR messageAsString:@"Bad argument options."];
 
@@ -151,7 +151,7 @@
             hostReachability = nil;
         }
         
-        hostReachability = [Reachability reachabilityWithAddress:sa];
+        hostReachability = [AppFeelReachability reachabilityWithAddress:sa];
         [hostReachability startNotifier];
     }
     [self.commandDelegate sendPluginResult:pluginResult callbackId:callbackId];
@@ -164,7 +164,7 @@
     NSUInteger argc = [args count];
     
     if (argc >= 1) {
-        NSDictionary* options = [args objectAtIndex:0 withDefault:[NSNull null]];
+        NSDictionary* options = [command argumentAtIndex:0 withDefault:[NSNull null]];
         if ((NSNull *)options == [NSNull null]) {
             // Do nothing
         } else {
@@ -184,7 +184,7 @@
         localWifiReachability = nil;
     }
     
-    localWifiReachability = [Reachability reachabilityForLocalWiFi];
+    localWifiReachability = [AppFeelReachability reachabilityForLocalWiFi];
     [localWifiReachability startNotifier];
     [self.commandDelegate sendPluginResult:pluginResult callbackId:callbackId];
 }
@@ -196,7 +196,7 @@
     NSUInteger argc = [args count];
     
     if (argc >= 1) {
-        NSDictionary* options = [args objectAtIndex:0 withDefault:[NSNull null]];
+        NSDictionary* options = [command argumentAtIndex:0 withDefault:[NSNull null]];
         if ((NSNull *)options == [NSNull null]) {
             // Do nothing
         } else {
@@ -216,7 +216,7 @@
         internetReachability = nil;
     }
     
-    internetReachability = [Reachability reachabilityForInternetConnection];
+    internetReachability = [AppFeelReachability reachabilityForInternetConnection];
     [internetReachability startNotifier];
     [self.commandDelegate sendPluginResult:pluginResult callbackId:callbackId];
 }
@@ -253,7 +253,7 @@
 #pragma mark Notification observer
 
 - (void)onReachabilityChanged:(NSNotification*)note {
-    Reachability *reachability = [note object];
+    AppFeelReachability *reachability = [note object];
     NSString *interface;
     NSString *event = EVENT_REACHABILITY_CHANGE;
     NSString *observer = @"";

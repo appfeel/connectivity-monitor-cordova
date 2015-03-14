@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
-<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android" id="com.connectivity.monitor" version="1.0.2">
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android" id="com.connectivity.monitor" version="1.1.0">
 
   <name>Connectivity Monitoring</name>
   <description>Connectivity status monitoring. Detects if there is WIFI/3G/EDGE/CDMA available.</description>
@@ -41,14 +41,14 @@
   <platform name="ios">
     <config-file target="config.xml" parent="/*">
       <feature name="connectivity">
-        <param name="ios-package" value="CDVReachability" />
+        <param name="ios-package" value="CDVAppFeelReachability" />
       </feature>
     </config-file>
 
-    <header-file src="src/ios/CDVReachability.h" />
-    <source-file src="src/ios/CDVReachability.m" />
-    <source-file src="src/ios/Reachability.h" />
-    <source-file src="src/ios/Reachability.m" />
+    <header-file src="src/ios/CDVAppFeelReachability.h" />
+    <source-file src="src/ios/CDVAppFeelReachability.m" />
+    <source-file src="src/ios/AppFeelReachability.h" />
+    <source-file src="src/ios/AppFeelReachability.m" />
 
     <framework src="SystemConfiguration.framework" />
   </platform>

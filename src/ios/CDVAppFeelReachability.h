@@ -1,5 +1,5 @@
 /*
- CDVReachability.h
+ CDVAppFeelReachability.h
  Copyright 2014 AppFeel. All rights reserved.
  http://www.appfeel.com
  
@@ -29,11 +29,11 @@
 #import <UIKit/UIKit.h>
 #include <arpa/inet.h>
 
-#import "Reachability.h"
+#import "AppFeelReachability.h"
 
 #pragma mark Connectivity Plugin
 
-@interface CDVReachability : CDVPlugin {
+@interface CDVAppFeelReachability : CDVPlugin {
 }
 
 - (void)observeRemoteHostName:(CDVInvokedUrlCommand *)command;
