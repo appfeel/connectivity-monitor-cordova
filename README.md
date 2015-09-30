@@ -14,7 +14,7 @@ Connectivity status monitoring for Cordova apps. Detects if there is WIFI/3G/EDG
 
 To install this plugin, follow the [Command-line Interface Guide](http://cordova.apache.org/docs/en/edge/guide_cli_index.md.html#The%20Command-line%20Interface). You can use one of the following command lines:
 
-* `cordova plugin add com.connectivity.monitor`
+* `cordova plugin add cordova-connectivity-monitor`
 * `cordova plugin add https://github.com/appfeel/connectivity-monitor-cordova.git`
 
 To start monitoring connectivity, place the following code in your onDeviceReady callback. In order to attach an event listener, use `document.addEventListener("deviceready", onDeviceReady, false)`.
