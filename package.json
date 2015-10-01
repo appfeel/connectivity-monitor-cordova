@@ -1,6 +1,6 @@
 {
   "name": "cordova-connectivity-monitor",
-  "version": "1.2.1",
+  "version": "1.2.2",
   "description": "Connectivity status monitoring. Detects if there is WIFI/3G/EDGE/CDMA available.",
   "cordova": {
     "id": "cordova-connectivity-monitor",
