@@ -31,7 +31,7 @@ To start monitoring connectivity, place the following code in your onDeviceReady
     
     function onReachabilityChanged(e) {
       console.log(e.interface);
-      swich(e.interface) {
+      switch(e.interface) {
         case connectivity.DISCONNECTED:
           console.log('DISCONNECTED');
           break;
@@ -58,7 +58,7 @@ To start monitoring connectivity, place the following code in your onDeviceReady
         console.log("Is not connected");
       }
       
-      swich(e.observer) {
+      switch(e.observer) {
         case HOST:
           console.log('HOST');
           break;
