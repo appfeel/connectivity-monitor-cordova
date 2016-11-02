@@ -25,7 +25,7 @@ To start monitoring connectivity, place the following code in your onDeviceReady
       
       document.removeEventListener('deviceready', onDeviceReady, false);
       
-      document.addEventListener(connectivity.events.onReachabilityChanged, onReachabilityChanged, false)
+      document.addEventListener(connectivity.EVENTS.onReachabilityChanged, onReachabilityChanged, false)
       connectivity.observeRemoteHostName(myHostToObserve);
     }
     
