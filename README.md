@@ -1,3 +1,6 @@
+# DEPRECATED
+**DEPRECATED**: This plugin is no longer maintained. Please use https://github.com/apache/cordova-plugin-network-information
+
 Cordova Connectivity Monitor
 ============================
 
